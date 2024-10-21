@@ -68,7 +68,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// don't do anything until we are on a chat page
 		await page.waitForURL('https://v0.dev/chat/**');
 
-		const addCommandButton = await page.waitForSelector('text=npx shadcn add', { timeout: Infinity });
+		const addCommandButton = await page.waitForSelector('text=npx shadcn add', { timeout: 1000 * 60 * 60 * 24 });
 
 		// grab the command from the clipboard
 		await addCommandButton.click();
